@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ServicesService } from '../services.service';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { ServicesService } from '../services.service';
 export class EditableDropdownComponent implements OnInit {
   @Input() list!: any[];
   // two way binding for input text
-  inputItem : any = '';
+  inputItem! : any;
   newInput! : string;
   // enable or disable visiblility of dropdown
   listHidden = true;
@@ -37,11 +38,11 @@ export class EditableDropdownComponent implements OnInit {
     // this.selectedIndex = 0;
     if (!this.listHidden && this.inputItem !== undefined) {
       this.filteredList = this.list.filter(item  => item.name.toLowerCase().startsWith(this.inputItem.toLowerCase()));
+      this.service.inputItem = this.inputItem;
       if(this.filteredList.length == 0) {
-        setTimeout(() => {
           console.log("New input in setTimeOut",this.inputItem);
           this.newInput = this.inputItem;
-        }, 1000);
+          this.service.newInput = this.newInput;
       }
     }
   }
@@ -70,7 +71,7 @@ export class EditableDropdownComponent implements OnInit {
   // select highlighted item when enter is pressed or any item that is clicked
   selectItem(idx:any) {
 
-    this.inputItem = this.filteredList[idx].name;
+    this.inputItem = this.filteredList[idx]?.name;
     this.listHidden = true;
     this.selectedIndex = idx;
   }

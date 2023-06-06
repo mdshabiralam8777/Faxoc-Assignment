@@ -1,10 +1,31 @@
-<pre>
-  Please click on the input/dropdown to see the list of companies ,
-  if the searched comopany didn't appear ,
-  it'll show the message as data not present in DB
-  Please add using below add
-</pre>
-
-<app-editable-dropdown *ngIf="companiesList.length > 0" [list]="companiesList"></app-editable-dropdown>
-
-
+<div class="container-fluid mt-2">
+  <div class="faxoc-nav-bar ">
+    <div>
+      <img src="https://faxoc.com/assets/company_logos/FullLogo_Transparent_NoBuffer.png" alt="" width="178.08"
+        height="48">
+    </div>
+    <div><a href="https://faxoc.com/blog/job">JOB POTAL</a></div>
+    <div><a href="https://faxoc.com/log-in">HRMS</a></div>
+    <div><a href="https://faxoc.com/">PARTNERS</a></div>
+    <div><a href="https://faxoc.com/">FAXOC</a></div>
+  </div>
+  <div class="faxoc-button">
+    <div>
+      <button type="submit" class="btn btn-outline-info rounded-pill">Live Demo</button>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-info rounded-pill fill">Login</button>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <app-user-details></app-user-details>
+    </div>
+    <div class="col-4">
+      <app-editable-dropdown *ngIf="companiesList.length > 0" [list]="companiesList"></app-editable-dropdown>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 
@@ -9,7 +9,9 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class ServicesService {
 
- private apiUrl = 'https://jsonblob.com/api/jsonBlob/1114440732240003072';
+newInput! : string;
+inputItem! : string;
+private apiUrl = 'https://jsonblob.com/api/jsonBlob/1114440732240003072';
 
   constructor(private http: HttpClient) { }
 

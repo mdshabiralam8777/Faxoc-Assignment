@@ -1,11 +1,38 @@
-.drop-down{
+.container-fluid{
   display: flex;
-  justify-content: center;
-  align-content: center;
-  margin: 30px;
+  justify-content: space-between;
 }
-.select-country{
-  width: 200px !important;
-  height: 30px;
-  padding: 5px;
+.container-fluid > div > div {
+  color: black  !important;
+}
+.faxoc-nav-bar{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  div{
+    padding-right: 40px;
+  }
+}
+.faxoc-button{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  div{
+    padding-right: 40px;
+    button.btn-info{
+      color: white !important;
+    }
+  }
+
+}
+.container {
+  margin: 20px 200px;
+}
+a{
+  text-decoration: none;
+  color: black !important;
+}
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #1eafea!important;
 }

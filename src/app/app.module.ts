@@ -7,6 +7,7 @@ import { ReversePipe, UnderscorePipe } from './underscore.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditableDropdownComponent } from './editable-dropdown/editable-dropdown.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     UnderscorePipe,
     ReversePipe,
-    EditableDropdownComponent
+    EditableDropdownComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
